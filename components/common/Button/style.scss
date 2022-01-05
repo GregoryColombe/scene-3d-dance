@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Abel&family=Bebas+Neue&display=swap');
+
+button {
+    width: 100px;
+
+    padding: 0.5rem 1rem;
+
+    color: #FFF;
+    font-weight: 400;
+
+    font-size: 2rem;
+
+    font-family: 'Abel', sans-serif;
+
+    background: none;
+
+    border: solid 1px #FFF;
+
+    &:hover, &:focus {
+        border-style: dashed;
+
+        cursor: pointer;
+
+        transition: 1s;
+    }
+
+    &:first-of-type {
+        margin-top: 0;
+    }
+}
+
