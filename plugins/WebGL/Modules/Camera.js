@@ -42,7 +42,11 @@ export default class Camera {
           x: 3,
           y: 1.5,
           z: 0.5,
-          onUpdate: () => this.instance.lookAt(1, 0.35, 0)
+          onUpdate: () => this.instance.lookAt(1, 0.35, 0),
+          onStart: () => this._changeContent({
+            title: 'Gregory',
+            description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor illum corporis alias atque nemo iusto obcaecati, accusamus et suscipit laudantium at, maxime eligendi totam quos fugit, sapiente ipsa animi omnis. Quidem nostrum voluptates eveniet quaerat, iste excepturi praesentium animi est? Ullam velit corporis rerum laudantium ipsa, asperiores exercitationem fuga aspernatur?'
+          })
         })
         break
       case 'Karen':
@@ -51,10 +55,23 @@ export default class Camera {
           x: -3,
           y: 1.5,
           z: 0.5,
-          onUpdate: () => this.instance.lookAt(-1, 0.35, 0)
+          opacity: 1,
+          onUpdate: () => this.instance.lookAt(-1, 0.35, 0),
+          onStart: () => this._changeContent({
+            title: 'Karen',
+            description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi ex accusamus illo dignissimos doloribus unde tempore officiis, sit labore eligendi quisquam aperiam, velit molestias perspiciatis. Fuga quia illo at, quam consequuntur rerum ut excepturi illum quo quidem repellendus quisquam quod nam aliquam est.'
+          })
         })
         break
     }
+  }
+
+  _changeContent (content) {
+    const title = document.querySelector('.textContainer-title')
+    const description = document.querySelector('.textContainer-description')
+
+    title.innerHTML = content.title
+    description.innerHTML = content.description
   }
 
   _rotateCamera (x, y, z, duration) {

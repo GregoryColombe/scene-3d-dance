@@ -5,5 +5,11 @@ export default {
       type: String,
       default: ''
     }
+  },
+  methods: {
+    toto () {
+      console.log('toto')
+    }
   }
+
 }
